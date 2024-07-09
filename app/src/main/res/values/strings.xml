@@ -27,6 +27,8 @@
     <string name="rating_info">%3.1f/5.0</string>
     <string name="date">Date</string>
     <string name="time">Time</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
     <plurals name="product_count">
         <item quantity="one">Product Count: %1$d product</item>
         <item quantity="other">Product Count: %1$d products</item>

@@ -150,14 +150,17 @@ private fun ProductListItem(
     ) {
         Column(
             verticalArrangement = Arrangement.spacedBy(dimensionResource(id = R.dimen.padding_small)),
-            modifier = modifier.fillMaxWidth().padding(dimensionResource(id = R.dimen.padding_large))
+            modifier = modifier.fillMaxWidth().padding(dimensionResource(id = R.dimen.padding_small))
         ){
             Row(
                 verticalAlignment = Alignment.CenterVertically,
                 horizontalArrangement = Arrangement.spacedBy(dimensionResource(id = R.dimen.padding_small)),
                 modifier = Modifier.fillMaxWidth()
             ) {
-                Checkbox(checked = listItemModel.selected, onCheckedChange = { onToggleSelect(listItemModel)})
+                Checkbox(
+                    checked = listItemModel.selected,
+                    onCheckedChange = { onToggleSelect(listItemModel)}
+                )
                 Column(
                     verticalArrangement = Arrangement.spacedBy(dimensionResource(id = R.dimen.padding_small))
                 ){
@@ -198,7 +201,9 @@ private fun ProductListItem(
             Text(
                 text = listItemModel.date,
                 fontStyle = FontStyle.Italic,
-                modifier = modifier.align(Alignment.CenterHorizontally)
+                modifier = modifier
+                    .align(Alignment.Start)
+                    .padding(start = dimensionResource(id = R.dimen.padding_small))
             )
         }
     }

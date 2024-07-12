@@ -168,11 +168,16 @@ private fun ProductListItem(
                     Row(
                         horizontalArrangement = Arrangement.SpaceBetween,
                         verticalAlignment = Alignment.CenterVertically,
-                        modifier = Modifier.fillMaxWidth()
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(bottom = dimensionResource(id = R.dimen.padding_medium))
                     ) {
                         Text(
                             text = listItemModel.name,
                             style = MaterialTheme.typography.titleLarge,
+                        )
+                        RatingDisplay(
+                            rating = listItemModel.rating.toInt()
                         )
                     }
                     Row(

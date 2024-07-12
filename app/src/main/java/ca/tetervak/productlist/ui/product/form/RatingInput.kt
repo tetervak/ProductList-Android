@@ -14,7 +14,7 @@ fun RatingInput(
     AndroidView(
         factory = { context ->
             RatingBar(context).apply {
-                stepSize = 0.5f
+                stepSize = 1.0f
                 numStars = 5
             }
         },

@@ -23,6 +23,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
@@ -193,21 +194,31 @@ fun ProductForm(
             singleLine = true
         )
         Row(
-            horizontalArrangement = Arrangement.SpaceAround,
-            modifier = Modifier.fillMaxWidth()
+            horizontalArrangement = Arrangement.spacedBy(dimensionResource(id = R.dimen.padding_small)),
+            verticalAlignment = Alignment.CenterVertically,
+            modifier = Modifier.align(Alignment.CenterHorizontally)
         ) {
             Text(
                 text = stringResource(id = R.string.rating),
                 style = MaterialTheme.typography.bodyLarge
             )
+            RatingInput(
+                rating = productFormModel.rating,
+                onRatingChange = onRatingChange
+            )
         }
         Row(
-            horizontalArrangement = Arrangement.SpaceAround,
-            modifier = Modifier.fillMaxWidth()
+            horizontalArrangement = Arrangement.spacedBy(dimensionResource(id = R.dimen.padding_small)),
+            verticalAlignment = Alignment.CenterVertically,
+            modifier = Modifier.align(Alignment.CenterHorizontally)
         ) {
             Text(
                 text = stringResource(id = R.string.condition),
                 style = MaterialTheme.typography.bodyLarge
+            )
+            ConditionInput(
+                condition = productFormModel.condition,
+                onConditionChange = onConditionChange
             )
         }
         Row(

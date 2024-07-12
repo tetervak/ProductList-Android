@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="product_condition">
-        <item>New</item>
+        <item>Brand New</item>
         <item>Used Like New</item>
         <item>Used Very Good</item>
         <item>Used Good</item>

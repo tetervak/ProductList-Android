@@ -5,7 +5,6 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -150,7 +149,9 @@ private fun ProductListItem(
     ) {
         Column(
             verticalArrangement = Arrangement.spacedBy(dimensionResource(id = R.dimen.padding_small)),
-            modifier = modifier.fillMaxWidth().padding(dimensionResource(id = R.dimen.padding_small))
+            modifier = modifier
+                .fillMaxWidth()
+                .padding(dimensionResource(id = R.dimen.padding_small))
         ){
             Row(
                 verticalAlignment = Alignment.CenterVertically,
@@ -166,11 +167,17 @@ private fun ProductListItem(
                 ){
                     Row(
                         horizontalArrangement = Arrangement.SpaceBetween,
-                        modifier = Modifier.fillMaxWidth()
+                        verticalAlignment = Alignment.CenterVertically,
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(bottom = dimensionResource(id = R.dimen.padding_medium))
                     ) {
                         Text(
                             text = listItemModel.name,
                             style = MaterialTheme.typography.titleLarge,
+                        )
+                        RatingDisplay(
+                            rating = listItemModel.rating.toInt()
                         )
                     }
                     Row(

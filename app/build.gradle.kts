@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+    alias(libs.plugins.compose.compiler)
 
     alias(libs.plugins.ksp)
 
@@ -10,12 +11,12 @@ plugins {
 
 android {
     namespace = "ca.tetervak.productlist"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "ca.tetervak.productlist"
         minSdk = 30
-        targetSdk = 34
+        targetSdk = 35
         versionCode = 1
         versionName = "1.0"
 
@@ -43,9 +44,6 @@ android {
     }
     buildFeatures {
         compose = true
-    }
-    composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.14"
     }
     packaging {
         resources {

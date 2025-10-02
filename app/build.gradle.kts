@@ -11,12 +11,12 @@ plugins {
 
 android {
     namespace = "ca.tetervak.productlist"
-    compileSdk = 35
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "ca.tetervak.productlist"
         minSdk = 30
-        targetSdk = 35
+        targetSdk = 36
         versionCode = 1
         versionName = "1.0"
 
@@ -67,6 +67,7 @@ dependencies {
 
     implementation(libs.androidx.room)
     implementation(libs.androidx.room.runtime)
+    implementation(libs.androidx.compose.material.icons.core)
     annotationProcessor(libs.androidx.room.compiler)
     ksp(libs.androidx.room.compiler)
 

@@ -5,7 +5,6 @@ plugins {
 
     alias(libs.plugins.ksp)
 
-    alias(libs.plugins.kapt)
     alias(libs.plugins.hilt)
 }
 
@@ -72,7 +71,7 @@ dependencies {
     ksp(libs.androidx.room.compiler)
 
     implementation(libs.hilt.android)
-    kapt(libs.hilt.android.compiler)
+    ksp(libs.hilt.android.compiler)
     
     implementation(libs.hilt.navigation.compose)
 
@@ -83,9 +82,4 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
-}
-
-// Allow references to generated code
-kapt {
-    correctErrorTypes = true
 }
